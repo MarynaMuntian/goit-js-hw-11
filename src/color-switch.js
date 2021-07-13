@@ -1,5 +1,5 @@
-const startButton = document.querySelector('[data-action="data-start"]');
-const stopButton = document.querySelector("data-stop");
+const startButton = document.querySelector('["data-start"]');
+const stopButton = document.querySelector('["data-stop"]');
 const body = document.querySelector('body');
 let timerId = null;
 stopButton.disabled = true;
@@ -9,7 +9,7 @@ function getRandomHexColor() {
 }
 
 const backgroundColor = () => {
-    body.style.backgroundColor = getRandomHexColor();
+    return body.style.backgroundColor = getRandomHexColor();
 }
 
 const onClickStart = () => {
