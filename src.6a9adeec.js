@@ -5,8 +5,8 @@ const e=document.querySelector("[data-start]"),t=document.querySelector("[data-s
 },{}],"XCzN":[function(require,module,exports) {
 
 },{}],"LDlJ":[function(require,module,exports) {
-const e=e=>new Promise((o,t)=>{setTimeout(()=>{o(e)},e)}),o=e=>console.log(`Fulfilled after ${e}ms`);e(2e3).then(o),e(1e3).then(o),e(1500).then(o);const t=[{name:"Mango",active:!0},{name:"Poly",active:!1},{name:"Ajax",active:!1}],a=(e,o)=>Promise.resolve(e.map(e=>e.name===o?{...e,active:!e.active}:e));a(t,"Mango").then(console.table),a(t,"Ajax").then(console.table);const n=(e,o)=>Math.floor(Math.random()*(o-e+1)+e),s=e=>{const o=n(200,500);return new Promise((t,a)=>{setTimeout(()=>{Math.random()>.3?t(`Transaction ${e.id} processed in ${o}ms`):a(`Error processing transaction ${e.id}. Please try again later.`)},o)})};s({id:70,amount:150}).then(logSuccess).catch(logError),s({id:71,amount:230}).then(logSuccess).catch(logError);
+const e=e=>new Promise((t,n)=>{setTimeout(()=>{t(e)},e)}),t=e=>console.log(`Fulfilled after ${e}ms`);e(2e3).then(t),e(1e3).then(t),e(1500).then(t);const n=[{name:"Mango",active:!0},{name:"Poly",active:!1},{name:"Ajax",active:!1}],o=(e,t)=>Promise.resolve(e.map(e=>e.name===t?{...e,active:!e.active}:e));o(n,"Mango").then(console.table),o(n,"Ajax").then(console.table);const a=(e,t)=>Math.floor(Math.random()*(t-e+1)+e),i=e=>{const t=a(200,500);return new Promise((n,o)=>{setTimeout(()=>{Math.random()>.3&&n({id:e.id,time:t}),o(e.id)},t)})},s=({id:e,time:t})=>{console.log(`Transaction ${e} processed in ${t}ms`)},c=e=>{console.warn(`Error processing transaction ${e}. Please try again later.`)};i({id:70,amount:150}).then(s).catch(c),i({id:71,amount:230}).then(s).catch(c);
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./color-switch"),require("./timer"),require("./promisification");
 },{"./sass/main.scss":"clu1","./color-switch":"FRNy","./timer":"XCzN","./promisification":"LDlJ"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-11/src.041ee0b5.js.map
+//# sourceMappingURL=/goit-js-hw-11/src.6a9adeec.js.map
