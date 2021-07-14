@@ -1,4 +1,6 @@
 // Подзадание 1
+// Напиши функцию delay(ms), которая возвращает промис, переходящий в состояние "resolved" через ms миллисекунд.
+// Значением исполнившегося промиса должно быть то кол - во миллисекунд которое передали во время вызова функции delay.
 
 const delay = ms => {
     return new Promise((resolve, reject) => {
@@ -16,6 +18,8 @@ delay(1000).then(logger); // Fulfilled after 1000ms
 delay(1500).then(logger); // Fulfilled after 1500ms
 
 // Подзадание 2
+// Перепиши функцию toggleUserState() так, чтобы она не использовала callback-функцию callback,
+// а принимала всего два параметра allUsers и username и возвращала промис.
 
 const users = [
   { name: 'Mango', active: true },
@@ -38,6 +42,8 @@ toggleUserState(users, 'Mango').then(console.table);
 toggleUserState(users, 'Ajax').then(console.table);
 
 // Подзадание 3
+// Перепиши функцию makeTransaction() так, чтобы она не использовала callback-функции onSuccess и onError, 
+// а принимала всего один параметр transaction и возвращала промис.
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -45,21 +51,27 @@ const randomIntegerFromInterval = (min, max) => {
 
 const makeTransaction = (transaction) => {
   const delay = randomIntegerFromInterval(200, 500);
-    return new Promise((resolve, reject) => {
-setTimeout(() => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
     const canProcess = Math.random() > 0.3;
 
     if (canProcess) {
-        resolve(`Transaction ${transaction.id} processed in ${delay}ms`);
-    } else {
-        reject(`Error processing transaction ${transaction.id}. Please try again later.`);
-         };
+      resolve({ id: transaction.id, time: delay });
     }
-  , delay);
-     });
+      reject(transaction.id);
+  }, delay);
+  });
 };
 
-// // Currently the function works like this
+const logSuccess = ({ id, time }) => {
+  console.log(`Transaction ${id} processed in ${time}ms`);
+};
+
+const logError = id => {
+  console.warn(`Error processing transaction ${id}. Please try again later.`);
+};
+
+// Currently the function works like this
 // makeTransaction({ id: 70, amount: 150 }, logSuccess, logError);
 // makeTransaction({ id: 71, amount: 230 }, logSuccess, logError);
 
