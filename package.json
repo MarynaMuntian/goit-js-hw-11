@@ -26,6 +26,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "color-switch": "^1.0.4"
+    "color-switch": "^1.0.4",
+    "sweetalert2": "^11.0.18"
   }
 }
