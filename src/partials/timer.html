@@ -10,19 +10,49 @@
     <input type="date" id="date-selector" />
     <button type="button" data-start>Start countdown</button>
 
-    <div class="timer">
-      <div class="field">
+    <div class="container">
+      <div class="balloon white">
+        <div class="star-red"></div>
+        <div class="face">
+          <div class="eye"></div>
+          <div class="mouth happy"></div>
+        </div>
+        <div class="triangle"></div>
+        <div class="string"></div>
+      </div>
+      <div class="balloon red">
+        <div class="star"></div>
+        <div class="face">
+          <div class="eye"></div>
+          <div class="mouth happy"></div>
+        </div>
+        <div class="triangle"></div>
+        <div class="string"></div>
+      </div>
+
+      <div class="balloon blue">
+        <div class="star"></div>
+        <div class="face">
+          <div class="eye"></div>
+          <div class="mouth happy"></div>
+        </div>
+        <div class="triangle"></div>
+        <div class="string"></div>
+      </div>
+
+    <div class="timer" id="timer">
+      <div class="field days numbers">
         <span class="value" data-days>11</span>
         <span class="label">Days</span>
       </div>
-      <div class="field">
+      <div class="field hours numbers">
         <span class="value" data-hours>11</span><span class="label">Hours</span>
       </div>
-      <div class="field">
+      <div class="field minutes numbers">
         <span class="value" data-minutes>11</span>
         <span class="label">Minutes</span>
       </div>
-      <div class="field">
+      <div class="field seconds numbers">
         <span class="value" data-seconds>11</span>
         <span class="label">Seconds</span>
       </div>
