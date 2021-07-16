@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import Swal from 'sweetalert2';
 
 const dateSelector = document.getElementById('date-selector');
 const startButton = document.querySelector('[data-start]');
@@ -16,9 +17,14 @@ class Timer {
   }
   updateButton() {
     const deltaTime = this.getTime();
-    if (deltaTime > 0) {
+      if (deltaTime > 0) {
       startButton.disabled = false;
-    } else {
+      } else {
+          Swal.fire({
+    title: 'Please choose a date in the future',
+    icon: 'error',
+    confirmButtonText: 'Cool'
+});
       startButton.disabled = true;
     }
   }
@@ -30,8 +36,9 @@ class Timer {
     this.isActive = true;
     this.intervalId = setInterval(() => {
       const deltaTime = this.getTime();
-      if (deltaTime <= 0) {
-        clearInterval(this.intervalId);
+        if (deltaTime <= 0) {
+            
+          clearInterval(this.intervalId);
         return;
       }
       startButton.disabled = false;
@@ -49,7 +56,7 @@ class Timer {
     const finishTime = dateSelector.textContent;
     const currentTime = Date.now();
     const deltaTime = finishTime - currentTime;
-    if (deltaTime === 0) {
+      if (deltaTime === 0) {          
       clearInterval(this.intervalId);
       this.isActive = false;
     }
