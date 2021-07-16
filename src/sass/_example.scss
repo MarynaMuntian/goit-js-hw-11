@@ -32,6 +32,22 @@ body {
   background: $dark;
 }
 
+#date-selector {
+  margin-top: 10px;
+  padding: 5px;
+  width: 240px;
+  border-radius: 5px;
+  font-family: $font;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px;
+  width: 240px;
+  border-radius: 5px;
+  font-family: $font;
+}
+
 .container {
   position: relative;
   margin: auto;
@@ -39,16 +55,6 @@ body {
   width: 650px;
   height: 480px;
 }
-
-// h1 {
-//   font-family: $font;
-//   text-align: center;
-//   margin-top: 2em;
-//   font-size: 1em;
-//   text-transform: uppercase;
-//   letter-spacing: 5px;
-//   color: $white;
-// }
 
 #timer {
   color: $white;
